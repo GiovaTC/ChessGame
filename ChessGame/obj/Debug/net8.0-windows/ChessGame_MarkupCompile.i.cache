@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\gtapi\Source\Repos\chess.com-boards-and-pieces\ChessGame\obj\Debug\net8.0-windows\
+C:\Users\gtapi\source\repos\chess.com-boards-and-pieces\ChessGame\obj\Debug\net8.0-windows\
 ChessGame
 none
 false
 TRACE;DEBUG;NET;NET8_0;NETCOREAPP
-C:\Users\gtapi\Source\Repos\chess.com-boards-and-pieces\ChessGame\App.xaml
+C:\Users\gtapi\source\repos\chess.com-boards-and-pieces\ChessGame\App.xaml
 11407045341
 
 8399684934
 198-556154604
 MainWindow.xaml;
 
-False
+True
 

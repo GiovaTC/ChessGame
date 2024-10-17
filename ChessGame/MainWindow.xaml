@@ -7,6 +7,9 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
+        <Grid.Background>
+            <ImageBrush ImageSource="C:\Users\gtapi\source\repos\chess.com-boards-and-pieces\pieces\alpha\FondoAjedrez.png" />
+        </Grid.Background>
         <Grid.RowDefinitions>
             <!-- Define 8 rows -->
             <RowDefinition Height="*" />
