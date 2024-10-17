@@ -27,7 +27,8 @@ Look at `data.json` file to see urls for each type of boards or sets
     <img src="https://github.com/GiorgioMegrelli/chess.com-boards-and-pieces/blob/master/pieces/3d_wood/wp.png" width="10%" />
 </p>
 
-<img src="https://github.com/GiorgioMegrelli/chess.com-boards-and-pieces/blob/master/boards/burled_wood.png" width="80%" />
+![8_bit](https://github.com/user-attachments/assets/8a4d9719-4d34-47a0-ae23-698353ca08cb)
+
 
 <p float="center">
     <img src="https://github.com/GiorgioMegrelli/chess.com-boards-and-pieces/blob/master/pieces/3d_wood/bp.png" width="10%" />
