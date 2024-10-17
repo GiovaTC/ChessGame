@@ -1,6 +1,7 @@
 # Ajedrez
 
-![image](https://github.com/user-attachments/assets/2ad87af2-6d4b-4bbf-8d4b-03840882a123)
+![image](https://github.com/user-attachments/assets/1a185ecb-fddc-4650-8d8d-8d678ba21f87)
+
 
 
 
