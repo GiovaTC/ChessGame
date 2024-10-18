@@ -71,10 +71,10 @@ namespace ChessGame
                 {
                     SelectPiece(clickedPosition);
                 }
-                else
+             /*   else
                 {
                     MovePieceAndCheckTurn(clickedPosition);
-                }
+                } */
             }
             catch (FormatException ex)
             {
@@ -93,18 +93,41 @@ namespace ChessGame
           //  String clickedPosition = selectedPosition.toString();
         }
 
-        private void MovePieceAndCheckTurn(String clickedPosition)
+/*        private void MovePieceAndCheckTurn(string clickedPosition)
         {
-            MovePiece(selectedPosition, clickedPosition);
+            // Convertir el string a un objeto de tipo Position2
+            Position2 clickedPos = ConvertStringToPosition2(clickedPosition);
+            Position2 selectedPos = ConvertStringToPosition2(selectedPosition);
+
+            // Mueve la pieza a la nueva posición
+            MovePiece(selectedPos, clickedPos);
+
+            // Restablece la posición seleccionada para la próxima jugada
             selectedPosition = null;
 
+            // Verifica si es el turno de las piezas negras
             if (!isWhiteTurn)
             {
-              //  MakeAIMove();
+                // Lógica para hacer el movimiento del AI, actualmente comentada
+                // MakeAIMove();
             }
+        }*/
+
+        // Método para convertir un string a un objeto Position2
+        private Position2 ConvertStringToPosition2(string positionString)
+        {
+            // Aquí deberías implementar la lógica para convertir el string en un objeto Position2
+            // Esto puede depender del formato de la cadena (ej. "A1", "B2", etc.)
+            // Ejemplo básico:
+            int x = positionString[0] - 'A'; // Convierte la letra a un número (A = 0, B = 1, etc.)
+            int y = int.Parse(positionString[1].ToString()) - 1; // Convierte el número de fila
+
+            return new Position2(x, y);
         }
 
-        private void MovePiece(Position2 selectedPosition, String clickedPosition)
+
+
+        private void MovePiece(Position2 selectedPosition, Position2 clickedPosition)
         {
             Piece piece = board.GetPiece(selectedPosition);
             if (piece != null && piece.IsValidMove(selectedPosition, clickedPosition, board))
