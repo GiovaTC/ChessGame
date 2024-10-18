@@ -54,7 +54,7 @@ namespace ChessGame
         {
             try
             {
-                Position2 clickedPosition = Position2.FromString(tagString);
+                Position2 clickedPosition = Position2.FromString(tagString); //err
 
                 if (selectedPosition == null)
                 {
