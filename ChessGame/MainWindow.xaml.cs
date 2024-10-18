@@ -93,7 +93,13 @@ namespace ChessGame
 
         private void MovePiece(Position2 selectedPosition, Position2 clickedPosition)
         {
-            throw new NotImplementedException();
+            Piece piece = board.GetPiece(selectedPosition);
+            if (piece != null && piece.IsValidMove(selectedPosition, clickedPosition, board))
+            {
+                board.SetPiece(selectedPosition, piece);
+                board.SetPiece(clickedPosition, null);
+                isWhiteTurn = !isWhiteTurn;
+            }
         }
 
  /*       private void MovePiece(Position2 from, Position2 to)
