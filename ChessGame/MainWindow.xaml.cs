@@ -39,24 +39,47 @@ namespace ChessGame
         private void OnSquareClick(object sender, RoutedEventArgs e)
         {
             Button clickedButton = sender as Button;
-            Position clickedPosition = (Position)clickedButton.Tag;
 
-            if (selectedPosition == null)
+            if (clickedButton?.Tag is string tagString)
             {
-                // Selecciona la pieza
-                selectedPosition = clickedPosition;
+                try
+                {
+                    Position2 clickedPosition = Position2.FromString(tagString);
+                    // Aquí puedes usar clickedPosition como necesites
+                }
+                catch (FormatException ex)
+                {
+                    MessageBox.Show($"Error al convertir la posición: {ex.Message}");
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Ocurrió un error inesperado: {ex.Message}");
+                }
             }
             else
             {
-                // Mueve la pieza
-                MovePiece(selectedPosition, clickedPosition);
-                selectedPosition = null;
-
-                if (!isWhiteTurn)
-                {
-                    MakeAIMove();
-                }
+                MessageBox.Show("El Tag no es válido.");
             }
+
+            /*
+                            Position clickedPosition = Position.FromString(clickedButton.Tag);
+
+                        if (selectedPosition == null)
+                        {
+                            // Selecciona la pieza
+                            selectedPosition = clickedPosition;
+                        }
+                        else
+                        {
+                            // Mueve la pieza
+                            MovePiece(selectedPosition, clickedPosition);
+                            selectedPosition = null;
+
+                            if (!isWhiteTurn)
+                            {
+                                MakeAIMove();
+                            }
+                        }*/
         }
 
         private void MakeAIMove()
@@ -80,4 +103,5 @@ namespace ChessGame
             }
         }
     }
+
 }

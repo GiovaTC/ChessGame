@@ -56,6 +56,23 @@ public class Position
     }
 }
 
+public class Position2
+{
+    public int X { get; set; }
+    public int Y { get; set; }
+
+    public static Position2 FromString(string positionString)
+    {
+        var parts = positionString.Split(',');
+        return new Position2
+        {
+            X = int.Parse(parts[0]),
+            Y = int.Parse(parts[1])
+        };
+    }
+}
+
+
 public class Board
 {
     public Piece[,] Squares { get; set; }
