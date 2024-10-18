@@ -9,7 +9,7 @@ namespace ChessGame
         private Board board;
         private bool isWhiteTurn;
         private SimpleAI ai;
-        private Position selectedPosition;
+        private Position2 selectedPosition;
 
         public MainWindow()
         {
@@ -42,57 +42,61 @@ namespace ChessGame
 
             if (clickedButton?.Tag is string tagString)
             {
-                try
-                {
-                    Position2 clickedPosition = Position2.FromString(tagString);
-                    // Aquí puedes usar clickedPosition como necesites
-                }
-                catch (FormatException ex)
-                {
-                    MessageBox.Show($"Error al convertir la posición: {ex.Message}");
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show($"Ocurrió un error inesperado: {ex.Message}");
-                }
+                HandleButtonClick(tagString);
             }
             else
             {
                 MessageBox.Show("El Tag no es válido.");
             }
-
-            /*
-                            Position clickedPosition = Position.FromString(clickedButton.Tag);
-
-                        if (selectedPosition == null)
-                        {
-                            // Selecciona la pieza
-                            selectedPosition = clickedPosition;
-                        }
-                        else
-                        {
-                            // Mueve la pieza
-                            MovePiece(selectedPosition, clickedPosition);
-                            selectedPosition = null;
-
-                            if (!isWhiteTurn)
-                            {
-                                MakeAIMove();
-                            }
-                        }*/
         }
 
-        private void MakeAIMove()
+        private void HandleButtonClick(string tagString)
         {
-            Move aiMove = ai.GetNextMove(board);
-            if (aiMove != null)
+            try
             {
-                MovePiece(aiMove.From, aiMove.To);
+                Position2 clickedPosition = Position2.FromString(tagString);
+
+                if (selectedPosition == null)
+                {
+                    SelectPiece(clickedPosition);
+                }
+                else
+                {
+                    MovePieceAndCheckTurn(clickedPosition);
+                }
             }
-            isWhiteTurn = true;
+            catch (FormatException ex)
+            {
+                MessageBox.Show($"Error al convertir la posición: {ex.Message}");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Ocurrió un error inesperado: {ex.Message}");
+            }
         }
 
-        private void MovePiece(Position from, Position to)
+        private void SelectPiece(Position2 clickedPosition)
+        {
+            selectedPosition = clickedPosition;
+        }
+
+        private void MovePieceAndCheckTurn(Position2 clickedPosition)
+        {
+            MovePiece(selectedPosition, clickedPosition);
+            selectedPosition = null;
+
+            if (!isWhiteTurn)
+            {
+              //  MakeAIMove();
+            }
+        }
+
+        private void MovePiece(Position2 selectedPosition, Position2 clickedPosition)
+        {
+            throw new NotImplementedException();
+        }
+
+ /*       private void MovePiece(Position2 from, Position2 to)
         {
             Piece piece = board.GetPiece(from);
             if (piece != null && piece.IsValidMove(from, to, board))
@@ -101,7 +105,7 @@ namespace ChessGame
                 board.SetPiece(from, null);
                 isWhiteTurn = !isWhiteTurn;
             }
-        }
+        }*/
     }
 
 }

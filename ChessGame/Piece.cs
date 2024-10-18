@@ -14,14 +14,14 @@ public abstract class Piece
         IsWhite = isWhite;
     }
 
-    public abstract bool IsValidMove(Position from, Position to, Board board);
+    public abstract bool IsValidMove(Position2 from, Position2 to, Board board);
 }
 
 public class Pawn : Piece
 {
     public Pawn(bool isWhite) : base(isWhite) { }
 
-    public override bool IsValidMove(Position from, Position to, Board board)
+    public override bool IsValidMove(Position2 from, Position2 to, Board board)
     {
         int direction = IsWhite ? 1 : -1;
         if (from.Column == to.Column)
@@ -32,7 +32,7 @@ public class Pawn : Piece
             }
             if ((IsWhite && from.Row == 1 || !IsWhite && from.Row == 6) && to.Row == from.Row + 2 * direction)
             {
-                return board.GetPiece(to) == null && board.GetPiece(new Position(from.Row + direction, from.Column)) == null;
+                return board.GetPiece(to) == null && board.GetPiece(new Position2(from.Row + direction, from.Column)) == null;
             }
         }
         else if (Math.Abs(from.Column - to.Column) == 1 && to.Row == from.Row + direction)
@@ -58,19 +58,31 @@ public class Position
 
 public class Position2
 {
-    public int X { get; set; }
-    public int Y { get; set; }
+    public int Row { get; set; }
+    public int Column { get; set; }
+
+    public Position2(int row, int column)
+    {
+        Row = row;
+        Column = column;
+    }
 
     public static Position2 FromString(string positionString)
     {
         var parts = positionString.Split(',');
-        return new Position2
+        if (parts.Length != 2)
         {
-            X = int.Parse(parts[0]),
-            Y = int.Parse(parts[1])
-        };
+            throw new FormatException("La cadena de posición debe contener exactamente dos valores separados por una coma.");
+        }
+
+        return null;/* new Position2
+        {
+            Row = int.Parse(parts[0]),
+            Column = int.Parse(parts[1])
+        };*/
     }
 }
+
 
 
 public class Board
@@ -82,7 +94,7 @@ public class Board
         Squares = new Piece[8, 8];
     }
 
-    public Piece GetPiece(Position position)
+    public Piece GetPiece(Position2 position)
     {
         return Squares[position.Row, position.Column];
     }
@@ -91,13 +103,18 @@ public class Board
     {
         Squares[position.Row, position.Column] = piece;
     }
+
+    internal void SetPiece(Position2 to, Piece piece)
+    {
+        throw new NotImplementedException();
+    }
 }
 
 public class Rook : Piece
 {
     public Rook(bool isWhite) : base(isWhite) { }
 
-    public override bool IsValidMove(Position from, Position to, Board board)
+    public override bool IsValidMove(Position2 from, Position2 to, Board board)
     {
         if (from.Row != to.Row && from.Column != to.Column)
         {
@@ -112,7 +129,7 @@ public class Rook : Piece
 
         while (currentRow != to.Row || currentColumn != to.Column)
         {
-            if (board.GetPiece(new Position(currentRow, currentColumn)) != null)
+            if (board.GetPiece(new Position2(currentRow, currentColumn)) != null)
             {
                 return false;
             }
@@ -128,7 +145,7 @@ public class Knight : Piece
 {
     public Knight(bool isWhite) : base(isWhite) { }
 
-    public override bool IsValidMove(Position from, Position to, Board board)
+    public override bool IsValidMove(Position2 from, Position2 to, Board board)
     {
         int rowDiff = Math.Abs(from.Row - to.Row);
         int colDiff = Math.Abs(from.Column - to.Column);
@@ -146,7 +163,7 @@ public class Bishop : Piece
 {
     public Bishop(bool isWhite) : base(isWhite) { }
 
-    public override bool IsValidMove(Position from, Position to, Board board)
+    public override bool IsValidMove(Position2 from, Position2 to, Board board)
     {
         if (Math.Abs(from.Row - to.Row) != Math.Abs(from.Column - to.Column))
         {
@@ -161,7 +178,7 @@ public class Bishop : Piece
 
         while (currentRow != to.Row || currentColumn != to.Column)
         {
-            if (board.GetPiece(new Position(currentRow, currentColumn)) != null)
+            if (board.GetPiece(new Position2(currentRow, currentColumn)) != null)
             {
                 return false;
             }
@@ -177,7 +194,7 @@ public class Queen : Piece
 {
     public Queen(bool isWhite) : base(isWhite) { }
 
-    public override bool IsValidMove(Position from, Position to, Board board)
+    public override bool IsValidMove(Position2 from, Position2 to, Board board)
     {
         if (from.Row == to.Row || from.Column == to.Column)
         {
@@ -195,7 +212,7 @@ public class King : Piece
 {
     public King(bool isWhite) : base(isWhite) { }
 
-    public override bool IsValidMove(Position from, Position to, Board board)
+    public override bool IsValidMove(Position2 from, Position2 to, Board board)
     {
         int rowDiff = Math.Abs(from.Row - to.Row);
         int colDiff = Math.Abs(from.Column - to.Column);

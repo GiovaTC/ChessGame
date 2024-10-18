@@ -13,11 +13,19 @@ public class Move
 {
     public Position From { get; set; }
     public Position To { get; set; }
+    public Position2 From1 { get; }
+    public Position2 To1 { get; }
 
     public Move(Position from, Position to)
     {
         From = from;
         To = to;
+    }
+
+    public Move(Position2 from, Position2 to)
+    {
+        From1 = from;
+        To1 = to;
     }
 }
 
@@ -33,7 +41,7 @@ public class SimpleAI
         {
             for (int col = 0; col < 8; col++)
             {
-                Position from = new Position(row, col);
+                Position2 from = new Position2(row, col);
                 Piece piece = board.GetPiece(from);
 
                 if (piece != null && !piece.IsWhite) // Suponiendo que la IA juega con las piezas negras
@@ -42,7 +50,7 @@ public class SimpleAI
                     {
                         for (int toCol = 0; toCol < 8; toCol++)
                         {
-                            Position to = new Position(toRow, toCol);
+                            Position2 to = new Position2(toRow, toCol);
                             if (piece.IsValidMove(from, to, board))
                             {
                                 possibleMoves.Add(new Move(from, to));
