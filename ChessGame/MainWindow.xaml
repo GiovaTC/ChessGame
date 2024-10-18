@@ -33,49 +33,112 @@
             <ColumnDefinition Width="*" />
         </Grid.ColumnDefinitions>
 
-        <!-- Example of placing images on the board -->
+        <!-- Example of placing buttons on the board -->
+        <!-- Fila 1 -->
+        <Button Tag="0,0" Grid.Row="0" Grid.Column="0" Click="OnSquareClick">
+            <Image Source="C:\Users\gtapi\source\repos\Juego_Ajedrez\pieces\alpha\wr.png" />
+        </Button>
+        <Button Tag="0,1" Grid.Row="0" Grid.Column="1" Click="OnSquareClick">
+            <Image Source="C:\Users\gtapi\source\repos\Juego_Ajedrez\pieces\alpha\wn.png" />
+        </Button>
+        <Button Tag="0,2" Grid.Row="0" Grid.Column="2" Click="OnSquareClick">
+            <Image Source="C:\Users\gtapi\source\repos\Juego_Ajedrez\pieces\alpha\wb.png" />
+        </Button>
+        <Button Tag="0,3" Grid.Row="0" Grid.Column="3" Click="OnSquareClick">
+            <Image Source="C:\Users\gtapi\source\repos\Juego_Ajedrez\pieces\alpha\wq.png" />
+        </Button>
+        <Button Tag="0,4" Grid.Row="0" Grid.Column="4" Click="OnSquareClick">
+            <Image Source="C:\Users\gtapi\source\repos\Juego_Ajedrez\pieces\alpha\wk.png" />
+        </Button>
+        <Button Tag="0,5" Grid.Row="0" Grid.Column="5" Click="OnSquareClick">
+            <Image Source="C:\Users\gtapi\source\repos\Juego_Ajedrez\pieces\alpha\wb.png" />
+        </Button>
+        <Button Tag="0,6" Grid.Row="0" Grid.Column="6" Click="OnSquareClick">
+            <Image Source="C:\Users\gtapi\source\repos\Juego_Ajedrez\pieces\alpha\wn.png" />
+        </Button>
+        <Button Tag="0,7" Grid.Row="0" Grid.Column="7" Click="OnSquareClick">
+            <Image Source="C:\Users\gtapi\source\repos\Juego_Ajedrez\pieces\alpha\wr.png" />
+        </Button>
 
-        <!-- Piezas en la fila 1 -->
-        <Image Source="C:\Users\gtapi\source\repos\Juego_Ajedrez\pieces\alpha\wr.png" Grid.Row="0" Grid.Column="0" />
-        <Image Source="C:\Users\gtapi\source\repos\Juego_Ajedrez\pieces\alpha\wn.png" Grid.Row="0" Grid.Column="1" />
-        <Image Source="C:\Users\gtapi\source\repos\Juego_Ajedrez\pieces\alpha\wb.png" Grid.Row="0" Grid.Column="2" />
-        <Image Source="C:\Users\gtapi\source\repos\Juego_Ajedrez\pieces\alpha\wk.png" Grid.Row="0" Grid.Column="3" />
-        <Image Source="C:\Users\gtapi\source\repos\Juego_Ajedrez\pieces\alpha\wq.png" Grid.Row="0" Grid.Column="4" />
-        <Image Source="C:\Users\gtapi\source\repos\Juego_Ajedrez\pieces\alpha\wb.png" Grid.Row="0" Grid.Column="5" />
-        <Image Source="C:\Users\gtapi\source\repos\Juego_Ajedrez\pieces\alpha\wn.png" Grid.Row="0" Grid.Column="6" />
-        <Image Source="C:\Users\gtapi\source\repos\Juego_Ajedrez\pieces\alpha\wr.png" Grid.Row="0" Grid.Column="7" />
+        <!-- Fila 2 -->
+        <Button Tag="1,0" Grid.Row="1" Grid.Column="0" Click="OnSquareClick">
+            <Image Source="C:\Users\gtapi\source\repos\Juego_Ajedrez\pieces\alpha\wp.png" />
+        </Button>
+        <Button Tag="1,1" Grid.Row="1" Grid.Column="1" Click="OnSquareClick">
+            <Image Source="C:\Users\gtapi\source\repos\Juego_Ajedrez\pieces\alpha\wp.png" />
+        </Button>
+        <Button Tag="1,2" Grid.Row="1" Grid.Column="2" Click="OnSquareClick">
+            <Image Source="C:\Users\gtapi\source\repos\Juego_Ajedrez\pieces\alpha\wp.png" />
+        </Button>
+        <Button Tag="1,3" Grid.Row="1" Grid.Column="3" Click="OnSquareClick">
+            <Image Source="C:\Users\gtapi\source\repos\Juego_Ajedrez\pieces\alpha\wp.png" />
+        </Button>
+        <Button Tag="1,4" Grid.Row="1" Grid.Column="4" Click="OnSquareClick">
+            <Image Source="C:\Users\gtapi\source\repos\Juego_Ajedrez\pieces\alpha\wp.png" />
+        </Button>
+        <Button Tag="1,5" Grid.Row="1" Grid.Column="5" Click="OnSquareClick">
+            <Image Source="C:\Users\gtapi\source\repos\Juego_Ajedrez\pieces\alpha\wp.png" />
+        </Button>
+        <Button Tag="1,6" Grid.Row="1" Grid.Column="6" Click="OnSquareClick">
+            <Image Source="C:\Users\gtapi\source\repos\Juego_Ajedrez\pieces\alpha\wp.png" />
+        </Button>
+        <Button Tag="1,7" Grid.Row="1" Grid.Column="7" Click="OnSquareClick">
+            <Image Source="C:\Users\gtapi\source\repos\Juego_Ajedrez\pieces\alpha\wp.png" />
+        </Button>
 
-        <!-- Piezas en la fila 2 -->
-        <Image Source="C:\Users\gtapi\source\repos\Juego_Ajedrez\pieces\alpha\wp.png" Grid.Row="1" Grid.Column="0" />
-        <Image Source="C:\Users\gtapi\source\repos\Juego_Ajedrez\pieces\alpha\wp.png" Grid.Row="1" Grid.Column="1" />
-        <Image Source="C:\Users\gtapi\source\repos\Juego_Ajedrez\pieces\alpha\wp.png" Grid.Row="1" Grid.Column="2" />
-        <Image Source="C:\Users\gtapi\source\repos\Juego_Ajedrez\pieces\alpha\wp.png" Grid.Row="1" Grid.Column="3" />
-        <Image Source="C:\Users\gtapi\source\repos\Juego_Ajedrez\pieces\alpha\wp.png" Grid.Row="1" Grid.Column="4" />
-        <Image Source="C:\Users\gtapi\source\repos\Juego_Ajedrez\pieces\alpha\wp.png" Grid.Row="1" Grid.Column="5" />
-        <Image Source="C:\Users\gtapi\source\repos\Juego_Ajedrez\pieces\alpha\wp.png" Grid.Row="1" Grid.Column="6" />
-        <Image Source="C:\Users\gtapi\source\repos\Juego_Ajedrez\pieces\alpha\wp.png" Grid.Row="1" Grid.Column="7" />
+        <!-- Fila 6 -->
+        <Button Tag="6,0" Grid.Row="6" Grid.Column="0" Click="OnSquareClick">
+            <Image Source="C:\Users\gtapi\source\repos\Juego_Ajedrez\pieces\alpha\bp.png" />
+        </Button>
+        <Button Tag="6,1" Grid.Row="6" Grid.Column="1" Click="OnSquareClick">
+            <Image Source="C:\Users\gtapi\source\repos\Juego_Ajedrez\pieces\alpha\bp.png" />
+        </Button>
+        <Button Tag="6,2" Grid.Row="6" Grid.Column="2" Click="OnSquareClick">
+            <Image Source="C:\Users\gtapi\source\repos\Juego_Ajedrez\pieces\alpha\bp.png" />
+        </Button>
+        <Button Tag="6,3" Grid.Row="6" Grid.Column="3" Click="OnSquareClick">
+            <Image Source="C:\Users\gtapi\source\repos\Juego_Ajedrez\pieces\alpha\bp.png" />
+        </Button>
+        <Button Tag="6,4" Grid.Row="6" Grid.Column="4" Click="OnSquareClick">
+            <Image Source="C:\Users\gtapi\source\repos\Juego_Ajedrez\pieces\alpha\bp.png" />
+        </Button>
+        <Button Tag="6,5" Grid.Row="6" Grid.Column="5" Click="OnSquareClick">
+            <Image Source="C:\Users\gtapi\source\repos\Juego_Ajedrez\pieces\alpha\bp.png" />
+        </Button>
+        <Button Tag="6,6" Grid.Row="6" Grid.Column="6" Click="OnSquareClick">
+            <Image Source="C:\Users\gtapi\source\repos\Juego_Ajedrez\pieces\alpha\bp.png" />
+        </Button>
+        <Button Tag="6,7" Grid.Row="6" Grid.Column="7" Click="OnSquareClick">
+            <Image Source="C:\Users\gtapi\source\repos\Juego_Ajedrez\pieces\alpha\bp.png" />
+        </Button>
 
+        <!-- Fila 7 -->
+        <Button Tag="7,0" Grid.Row="7" Grid.Column="0" Click="OnSquareClick">
+            <Image Source="C:\Users\gtapi\source\repos\chess.com-boards-and-pieces\pieces\alpha\br.png" />
+        </Button>
+        <Button Tag="7,1" Grid.Row="7" Grid.Column="1" Click="OnSquareClick">
+            <Image Source="C:\Users\gtapi\source\repos\chess.com-boards-and-pieces\pieces\alpha\bn.png" />
+        </Button>
+        <Button Tag="7,2" Grid.Row="7" Grid.Column="2" Click="OnSquareClick">
+            <Image Source="C:\Users\gtapi\source\repos\chess.com-boards-and-pieces\pieces\alpha\bb.png" />
+        </Button>
+        <Button Tag="7,3" Grid.Row="7" Grid.Column="3" Click="OnSquareClick">
+            <Image Source="C:\Users\gtapi\source\repos\chess.com-boards-and-pieces\pieces\alpha\bq.png" />
+        </Button>
+        <Button Tag="7,4" Grid.Row="7" Grid.Column="4" Click="OnSquareClick">
+            <Image Source="C:\Users\gtapi\source\repos\chess.com-boards-and-pieces\pieces\alpha\bk.png" />
+        </Button>
+        <Button Tag="7,5" Grid.Row="7" Grid.Column="5" Click="OnSquareClick">
+            <Image Source="C:\Users\gtapi\source\repos\chess.com-boards-and-pieces\pieces\alpha\bb.png" />
+        </Button>
+        <Button Tag="7,6" Grid.Row="7" Grid.Column="6" Click="OnSquareClick">
+            <Image Source="C:\Users\gtapi\source\repos\chess.com-boards-and-pieces\pieces\alpha\bn.png" />
+        </Button>
+        <Button Tag="7,7" Grid.Row="7" Grid.Column="7" Click="OnSquareClick">
+            <Image Source="C:\Users\gtapi\source\repos\chess.com-boards-and-pieces\pieces\alpha\br.png" />
+        </Button>
+        
 
-
-        <!-- Piezas en la fila 6 -->
-        <Image Source="C:\Users\gtapi\source\repos\Juego_Ajedrez\pieces\alpha\bp.png" Grid.Row="6" Grid.Column="0" />
-        <Image Source="C:\Users\gtapi\source\repos\Juego_Ajedrez\pieces\alpha\bp.png" Grid.Row="6" Grid.Column="1" />
-        <Image Source="C:\Users\gtapi\source\repos\Juego_Ajedrez\pieces\alpha\bp.png" Grid.Row="6" Grid.Column="2" />
-        <Image Source="C:\Users\gtapi\source\repos\Juego_Ajedrez\pieces\alpha\bp.png" Grid.Row="6" Grid.Column="3" />
-        <Image Source="C:\Users\gtapi\source\repos\Juego_Ajedrez\pieces\alpha\bp.png" Grid.Row="6" Grid.Column="4" />
-        <Image Source="C:\Users\gtapi\source\repos\Juego_Ajedrez\pieces\alpha\bp.png" Grid.Row="6" Grid.Column="5" />
-        <Image Source="C:\Users\gtapi\source\repos\Juego_Ajedrez\pieces\alpha\bp.png" Grid.Row="6" Grid.Column="6" />
-        <Image Source="C:\Users\gtapi\source\repos\Juego_Ajedrez\pieces\alpha\bp.png" Grid.Row="6" Grid.Column="7" />
-
-        <Image Source="C:\Users\gtapi\source\repos\chess.com-boards-and-pieces\pieces\alpha\br.png" Grid.Row="7" Grid.Column="0" />
-        <Image Source="C:\Users\gtapi\source\repos\chess.com-boards-and-pieces\pieces\alpha\bn.png" Grid.Row="7" Grid.Column="1" />
-        <Image Source="C:\Users\gtapi\source\repos\chess.com-boards-and-pieces\pieces\alpha\bb.png" Grid.Row="7" Grid.Column="2" />
-        <Image Source="C:\Users\gtapi\source\repos\chess.com-boards-and-pieces\pieces\alpha\bq.png" Grid.Row="7" Grid.Column="3" />
-        <Image Source="C:\Users\gtapi\source\repos\chess.com-boards-and-pieces\pieces\alpha\bk.png" Grid.Row="7" Grid.Column="4" />
-        <Image Source="C:\Users\gtapi\source\repos\chess.com-boards-and-pieces\pieces\alpha\bb.png" Grid.Row="7" Grid.Column="5" />
-        <Image Source="C:\Users\gtapi\source\repos\chess.com-boards-and-pieces\pieces\alpha\bn.png" Grid.Row="7" Grid.Column="6" />
-        <Image Source="C:\Users\gtapi\source\repos\chess.com-boards-and-pieces\pieces\alpha\br.png" Grid.Row="7" Grid.Column="7" />
-
-        <!-- Add other pieces similarly -->
+        <!-- Add other buttons similarly for the remaining rows -->
     </Grid>
 </Window>
