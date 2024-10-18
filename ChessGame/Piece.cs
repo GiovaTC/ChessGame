@@ -104,9 +104,9 @@ public class Board
         Squares[position.Row, position.Column] = piece;
     }
 
-    internal void SetPiece(Position2 to, Piece piece)
+    internal void SetPiece(Position2 position, Piece piece)
     {
-        throw new NotImplementedException();
+        Squares[position.Row, position.Column] = piece;
     }
 }
 

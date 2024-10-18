@@ -25,13 +25,13 @@ namespace ChessGame
             // Inicializa el tablero con las piezas en sus posiciones iniciales
             for (int i = 0; i < 8; i++)
             {
-                board.SetPiece(new Position(1, i), new Pawn(true));
-                board.SetPiece(new Position(6, i), new Pawn(false));
+                board.SetPiece(new Position2(1, i), new Pawn(true));
+                board.SetPiece(new Position2(6, i), new Pawn(false));
             }
-            board.SetPiece(new Position(0, 0), new Rook(true));
-            board.SetPiece(new Position(0, 7), new Rook(true));
-            board.SetPiece(new Position(7, 0), new Rook(false));
-            board.SetPiece(new Position(7, 7), new Rook(false));
+            board.SetPiece(new Position2(0, 0), new Rook(true));
+            board.SetPiece(new Position2(0, 7), new Rook(true));
+            board.SetPiece(new Position2(7, 0), new Rook(false));
+            board.SetPiece(new Position2(7, 7), new Rook(false));
 
             // Añadir otras piezas (caballos, alfiles, reinas, reyes) según sea necesario
         }
