@@ -4,12 +4,23 @@ using System.Windows.Controls;
 
 namespace ChessGame
 {
+
+    public class Position3
+    {
+        public int X { get; set; }
+        public int Y { get; set; }
+
+        public override string ToString()
+        {
+            return $"Position2{{X={X}, Y={Y}}}";
+        }
+    }
     public partial class MainWindow : Window
     {
         private Board board;
         private bool isWhiteTurn;
         private SimpleAI ai;
-        private String selectedPosition;
+        private Position2 selectedPosition;
 
         public MainWindow()
         {
@@ -77,7 +88,9 @@ namespace ChessGame
 
         private void SelectPiece(String clickedPosition)
         {
-            selectedPosition = clickedPosition;
+        //    Position3 position;
+            Position3 selectedPosition = new Position3 { X = 1, Y = 2 };
+          //  String clickedPosition = selectedPosition.toString();
         }
 
         private void MovePieceAndCheckTurn(String clickedPosition)
