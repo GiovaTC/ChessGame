@@ -9,7 +9,7 @@ namespace ChessGame
         private Board board;
         private bool isWhiteTurn;
         private SimpleAI ai;
-        private Position2 selectedPosition;
+        private String selectedPosition;
 
         public MainWindow()
         {
@@ -54,7 +54,7 @@ namespace ChessGame
         {
             try
             {
-                Position2 clickedPosition = Position2.FromString(tagString); //err
+                String clickedPosition = tagString; //err
 
                 if (selectedPosition == null)
                 {
@@ -75,12 +75,12 @@ namespace ChessGame
             }
         }
 
-        private void SelectPiece(Position2 clickedPosition)
+        private void SelectPiece(String clickedPosition)
         {
             selectedPosition = clickedPosition;
         }
 
-        private void MovePieceAndCheckTurn(Position2 clickedPosition)
+        private void MovePieceAndCheckTurn(String clickedPosition)
         {
             MovePiece(selectedPosition, clickedPosition);
             selectedPosition = null;
@@ -91,7 +91,7 @@ namespace ChessGame
             }
         }
 
-        private void MovePiece(Position2 selectedPosition, Position2 clickedPosition)
+        private void MovePiece(Position2 selectedPosition, String clickedPosition)
         {
             Piece piece = board.GetPiece(selectedPosition);
             if (piece != null && piece.IsValidMove(selectedPosition, clickedPosition, board))
